@@ -4,6 +4,8 @@ metadata:
   name: samplewebapp 
 spec:
   replicas: 1
+  imagePullSecrets:
+    - name: acr-secret
   selector:
     matchLabels:
       app: samplewebapp
