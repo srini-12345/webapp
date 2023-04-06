@@ -37,11 +37,6 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
-    - task: CopyFiles@2
-      inputs:
-        SourceFolder: '$(agent.builddirectory)'
-        Contents: '**'
-        TargetFolder: '$(build.artifactstagingdirectory)'
     - task: PublishPipelineArtifact@1
       inputs:
         targetPath: '$(Pipeline.Workspace)'
